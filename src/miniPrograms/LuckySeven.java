@@ -1,6 +1,9 @@
 package miniPrograms;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 public class LuckySeven {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -9,7 +12,19 @@ public class LuckySeven {
         while (initialBet > 999999 || initialBet < 1) {
             System.out.print("How much you would like to bet?");
             while (!sc.hasNextInt()) {
-                var temp = sc.nextLine();
+
+                String temp = sc.nextLine();
+
+                String emptyInputRegex = "^\\s*$";
+//                Pattern emptyInputPattern = Pattern.compile(emptyInputRegex);
+//                Matcher emptyInputMatcher = emptyInputPattern.matcher(temp);
+                boolean test = Objects.equals(temp, " ");
+                System.out.println(test + " hhhhhhh");
+//                if (test.matches(emptyInputRegex)) {
+//                    System.out.println("hahahha");
+//                }
+
+
                 System.out.println("invalid literal for int() with base 10: '" + temp + "'");
                 System.out.print("How much you would like to bet?");
             }
