@@ -1,37 +1,26 @@
 package miniPrograms;
-import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 public class LuckySeven {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int initialBet = 0;
+        var initialBet = "0";
 
-        while (initialBet > 999999 || initialBet < 1) {
+        while (Integer.parseInt(initialBet) > 999999 || Integer.parseInt(initialBet)  < 1) {
+            // Prompt the user to input a bet:
             System.out.print("How much you would like to bet?");
-            while (!sc.hasNextInt()) {
-
-                String temp = sc.nextLine();
-
-                String emptyInputRegex = "^\\s*$";
-//                Pattern emptyInputPattern = Pattern.compile(emptyInputRegex);
-//                Matcher emptyInputMatcher = emptyInputPattern.matcher(temp);
-                boolean test = Objects.equals(temp, " ");
-                System.out.println(test + " hhhhhhh");
-//                if (test.matches(emptyInputRegex)) {
-//                    System.out.println("hahahha");
-//                }
-
-
-                System.out.println("invalid literal for int() with base 10: '" + temp + "'");
+            initialBet = sc.nextLine();
+            // if the bet entered by user is not an integer or if it's a blank input, will ask user to re-enter a new bet
+            while (!initialBet.matches("^[+-]?[0-9]*") || initialBet.matches("^\\s*$")) {
+                System.out.println("invalid literal for int() with base 10: '" + initialBet + "'");
                 System.out.print("How much you would like to bet?");
+                initialBet = sc.nextLine();
             }
-            initialBet = sc.nextInt();
-            if (initialBet > 999999) {
+            // control the bet range:
+            if (Integer.parseInt(initialBet)  > 999999) {
                 System.out.println("Bet too much!");
-            } else if (initialBet < 1) {
+            } else if (Integer.parseInt(initialBet)  < 1) {
                 System.out.println("Bet too little!");
             }
         }
@@ -39,10 +28,10 @@ public class LuckySeven {
         sc.close();
 
         int maxReward = 0, totalRolls = 0;
-        for (int i = 1; i < 21; i++) {
+        for (int i = 1; i < 101; i++) {
             System.out.println("Game " + i + " :");
             int rollsPlayed = 0;
-            int currReward = initialBet, currMax = initialBet;
+            int currReward = Integer.parseInt(initialBet) , currMax = Integer.parseInt(initialBet) ;
             Random r = new Random();
             while (currReward >= 0) {
                 rollsPlayed++;
@@ -59,7 +48,7 @@ public class LuckySeven {
             System.out.println("Max player money: " + currMax);
             totalRolls += rollsPlayed;
         }
-        System.out.println("Average rolls per simulation: " + (double) totalRolls / 20);
+        System.out.println("Average rolls per simulation: " + (double) totalRolls / 100);
         System.out.println("Most money player won: " + maxReward);
     }
 }
