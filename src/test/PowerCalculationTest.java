@@ -4,6 +4,8 @@ import miniPrograms.PowerCalculation;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.math.BigInteger;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PowerCalculationTest {
@@ -14,7 +16,7 @@ class PowerCalculationTest {
             "2, 10, 1024"
     })
 
-    void power(int base, int exponent, int expected) {
+    void power(int base, int exponent, BigInteger expected) {
         PowerCalculation pC = new PowerCalculation();
         assertEquals(expected, pC.powerOfAnInteger(base, exponent));
     }

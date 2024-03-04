@@ -1,8 +1,11 @@
 package miniPrograms;
 
+import java.math.BigInteger;
+
 public class PowerCalculation {
-    public static int powerOfAnInteger(int base, int exponent) {
-        return (int)Math.pow(base, exponent);
+    public static BigInteger powerOfAnInteger(int base, int exponent) {
+        BigInteger bigint_base = BigInteger.valueOf(base);
+        return bigint_base.pow(exponent);
     }
 
 }
