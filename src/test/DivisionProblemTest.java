@@ -1,6 +1,6 @@
-package test;
+package JUnitTests;
 
-import miniPrograms.DivisionProblem;
+import programs.DivisionProblem;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

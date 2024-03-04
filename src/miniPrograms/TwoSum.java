@@ -1,4 +1,4 @@
-package miniPrograms;
+package programs;
 
 public class TwoSum {
     public static int sumTwo(int a, int b) {

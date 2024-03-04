@@ -1,4 +1,4 @@
-package miniPrograms;
+package programs;
 import java.util.Random;
 import java.util.Scanner;
 

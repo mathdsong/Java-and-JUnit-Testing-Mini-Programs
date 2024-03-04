@@ -1,4 +1,4 @@
-package miniPrograms;
+package programs;
 import static java.lang.Double.NaN;
 public class DivisionProblem {
 
