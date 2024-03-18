@@ -1,5 +1,3 @@
-package miniPrograms;
-
 import java.util.Scanner;
 
 public class Dosage {
@@ -33,9 +31,9 @@ public class Dosage {
         double mLPerDose = mgPerDose / concentration;
 
         if (unit.equals("lbs")) {
-            System.out.println("The dosage for the person who is " + copy_weight + unit + " :" + mLPerDose + "mL");
+            System.out.println("The dosage for the person who is " + copy_weight + unit + ": " + mLPerDose + "mL");
         } else {
-            System.out.println("The dosage for the person who is " + weight + unit + ":" + mLPerDose + "mL");
+            System.out.println("The dosage for the person who is " + weight + unit + ": " + mLPerDose + "mL");
         }
     }
 }

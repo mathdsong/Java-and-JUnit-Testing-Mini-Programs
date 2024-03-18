@@ -31,4 +31,7 @@ bin/
 ### added by me ###
 .idea/
 test-lib/
+*.txt
+*.class
+
 
