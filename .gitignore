@@ -33,5 +33,9 @@ bin/
 test-lib/
 *.txt
 *.class
+*.csv
+/src/miniPrograms/correctness
+
+
 
 
